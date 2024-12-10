@@ -38,7 +38,7 @@ export const seasonalProducts = [
 export const  closureImgs= [
   {
     id: '1',
-    image: require('@/src/assets/images/closure1.png'), 
+    image: require('@/src/assets/images/demo.jpg'), 
   },
   {
     id: '2',

@@ -1,4 +1,4 @@
-import { FlatList, View, Text, StyleSheet, ScrollView, Image ,TouchableOpacity} from 'react-native'
+import { FlatList, View, Text, StyleSheet, ScrollView, Image ,TouchableOpacity,SafeAreaView} from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Container } from 'lucide-react-native'
 import Header from '../../../../components/molecules/header';
@@ -135,6 +135,8 @@ const index = () => {
           {/* seasonalDemand */}
 
           <Text style={styles.featureText}>Seasonal Demands</Text>
+          <SafeAreaView >
+
           <FlatList
             data={seasonalProducts}
             renderItem={renderItem}
@@ -143,6 +145,7 @@ const index = () => {
             showsHorizontalScrollIndicator={false} // Optional: Hides the horizontal scrollbar
             contentContainerStyle={styles.listContainer}
           />
+          </SafeAreaView>
           
           
 
@@ -201,8 +204,6 @@ const styles = StyleSheet.create({
   trendingScroll: {
     display: 'flex',
     flexDirection: 'row',
-
-
   },
   trendingscrollview: {
     height: 100,
@@ -210,8 +211,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     margin: 10
   },
-
-
   listContainer: {
     paddingHorizontal: 16,
   },

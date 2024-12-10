@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link, Redirect } from 'expo-router'
 
 import AppIntroSlider from 'react-native-app-intro-slider'
-
+import RegisterScreen from './register/RegisterScreen'
 const index = () => {
 
 
@@ -12,7 +12,7 @@ const index = () => {
   const slides = [
     {
       key: 1,
-      title: 'Welcome to \n FarmEco',
+      title: 'Welcome to FarmEco',
       text: 'A place where you can Buy or Sell Crpos',
       image: require('../../assets/images/introman1.png'),
       backgroundColor: '#59b2ab',
@@ -58,7 +58,7 @@ const index = () => {
     
       <View style={styles.container} >
         {
-          showSlider ? <AppIntroSlider data={slides} renderItem={renderSlide} onDone={_onDone} /> :<Redirect href={'./select'}/>
+          showSlider ? <AppIntroSlider data={slides} renderItem={renderSlide} onDone={_onDone} /> :<Redirect href={'./register/RegisterScreen'}/>
           
         }
       </View>
@@ -101,12 +101,13 @@ const styles = StyleSheet.create({
     padding:20,
     height:'40%',
     display:'flex',
+    width:'100%',
     flex:1,
     justifyContent:'center',
     alignItems:'center'
   },
   Headingtxt:{
-    fontSize:35,
+    fontSize:25,
     fontWeight:'700',
    
   },

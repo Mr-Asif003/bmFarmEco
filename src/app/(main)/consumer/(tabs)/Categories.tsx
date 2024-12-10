@@ -15,7 +15,7 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import SelectFruits from '../(productListing)/CPreSelectFruits';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import COrFruitListingPage from '../(orderListing)/COrFruitListingPage';
-
+import { ClipboardList } from 'lucide-react';
 
 
 const Categories = () => {
@@ -70,7 +70,7 @@ const Categories = () => {
                 <View style={styles.sellContainer}>
                   <View style={styles.sell}>
 
-                    <View style={styles.title}><Text style={{ fontSize: 27, fontWeight: '700',color:'white' }}>Order</Text></View>
+                    <View style={styles.title}><Text style={{ fontSize: 19, fontWeight: '500',color:'black' }}>Order</Text></View>
                     <View style={styles.option}>
 
                       <TouchableOpacity style={styles.threeDotView} onPress={() => {
@@ -101,7 +101,7 @@ const Categories = () => {
                 <View style={styles.sellContainer}>
                   <View style={styles.sell}>
 
-                    <View style={styles.title}><Text style={{ fontSize: 20, fontWeight: '700',color:'white' }}>My Orders</Text></View>
+                    <View style={styles.title}><Text style={{ fontSize: 16, fontWeight: '500',color:'black' }}>My Orders</Text></View>
                     <View style={styles.option}>
 
                       <TouchableOpacity style={styles.threeDotView}>
@@ -110,7 +110,7 @@ const Categories = () => {
 
 
                       <TouchableOpacity style={styles.buttonView} onPress={() => router.push('../(orderListing)/COrMyProductsVeg')}>
-                        <Octicons name="plus-circle" color="#000" size={24} />
+                      <FontAwesome name="list-alt" color="#000" size={24} />
                       </TouchableOpacity>
 
                     </View>
@@ -129,7 +129,7 @@ const Categories = () => {
                 <View style={styles.sellContainer}>
                   <View style={styles.sell}>
 
-                    <View style={styles.title}><Text style={{ fontSize: 25, fontWeight: '700',color:'white' }}> Pre   order's</Text></View>
+                    <View style={styles.title}><Text style={{ fontSize: 16, fontWeight: '500',color:'black' }}> Pre   order's</Text></View>
                     <View style={styles.option}>
 
                       <TouchableOpacity style={styles.threeDotView}>
@@ -139,7 +139,7 @@ const Categories = () => {
 
                       <TouchableOpacity onPress={() => router.push('../(productListing)/CPreSelectVeg')} style={styles.buttonView}>
 
-                        <Text style={{ fontSize: 22, fontWeight: '500' }}>go</Text>
+                      <Octicons name="plus-circle" color="#000" size={24} />
 
                
 
@@ -161,23 +161,25 @@ const Categories = () => {
                 <View style={styles.sellContainer}>
                   <View style={styles.sell}>
 
-                    <View style={styles.title}><Text style={{ fontSize: 20, fontWeight: '700',color:'white' }}>My         Pre Orders</Text></View>
+                    <View style={styles.title}><Text style={{ fontSize: 16, fontWeight: '500',color:'black' }}>My         Pre Orders</Text></View>
                     <View style={styles.option}>
 
                       <TouchableOpacity style={styles.threeDotView}>
-                        <Entypo name="dots-three-vertical" color="#000" size={24} />
+                        {/* <Entypo name="dots-three-vertical" color="#000" size={24} /> */}
                       </TouchableOpacity>
 
 
                       <TouchableOpacity style={styles.buttonView} onPress={()=>router.push('../(productListing)/CPreMyProductsVeg')}>
-
+                      <FontAwesome name="list-alt" color="#000" size={24} />
                       </TouchableOpacity>
 
                     </View>
 
                   </View>
                 </View>
-                <View style={styles.iconcontainer}></View>
+                <View style={styles.iconcontainer}>
+                <Image source={require('../../../../assets/images/category3.jpg')} style={styles.btnImg}/>
+                </View>
 
               </View>
 
@@ -186,52 +188,57 @@ const Categories = () => {
                 <View style={styles.sellContainer}>
                   <View style={styles.sell}>
 
-                    <View style={styles.title}><Text style={{ fontSize: 20, fontWeight: '700',color:'white' }}>Subscription </Text>
-                    <Text style={{ fontSize: 19, fontWeight: '700',color:'white' }}>Farming</Text>
+                    <View style={styles.title}><Text style={{ fontSize: 13, fontWeight: '500',color:'black' }}>Subscription</Text>
+                    <Text style={{ fontSize: 15, fontWeight: '500',color:'black' }}>Farming</Text>
                     
                     </View>
                     
                     <View style={styles.option}>
 
                       <TouchableOpacity style={styles.threeDotView}>
-                        <Entypo name="dots-three-vertical" color="#000" size={24} />
+                        {/* <Entypo name="dots-three-vertical" color="#000" size={24} /> */}
                       </TouchableOpacity>
 
 
                       <TouchableOpacity style={styles.buttonView}>
-
+                      <Octicons name="plus-circle" color="#000" size={24} />
                       </TouchableOpacity>
 
                     </View>
 
                   </View>
                 </View>
-                <View style={styles.iconcontainer}></View>
+                <View style={styles.iconcontainer}>
+                <Image source={require('../../../../assets/images/introman3.png')} style={styles.btnImg3} />
+                </View>
 
               </View>
 
               <View style={styles.TopContainer}>
 
                 <View style={styles.sellContainer}>
-                  <View style={styles.sell}>
+                  <View style={[styles.sell,styles.down]}>
 
-                    <View style={styles.title}><Text style={{ fontSize: 18, fontWeight: '600' }}>My         Pre Orders</Text></View>
+                    <View style={styles.title}><Text style={{ fontSize: 13, fontWeight: '500',color:'black' }}>Subscriotion</Text>
+                   < Text style={{ fontSize: 15, fontWeight: '500',color:'black' }}>History</Text></View>
                     <View style={styles.option}>
 
                       <TouchableOpacity style={styles.threeDotView}>
-                        <Entypo name="dots-three-vertical" color="#000" size={24} />
+                        {/* <Entypo name="dots-three-vertical" color="#000" size={24} /> */}
                       </TouchableOpacity>
 
 
                       <TouchableOpacity style={styles.buttonView}>
-
+                      <FontAwesome name="history" color="#000" size={24} />
                       </TouchableOpacity>
 
                     </View>
 
                   </View>
                 </View>
-                <View style={styles.iconcontainer}></View>
+                <View style={styles.iconcontainer}>
+                <Image source={require('../../../../assets/images/introman1.png')} style={styles.btnImg3} />
+                </View>
 
               </View>
               
@@ -256,7 +263,7 @@ const Categories = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
+    display: 'flex',
     backgroundColor: '#28Ac60'
   },
   headerContainer: {
@@ -264,7 +271,7 @@ const styles = StyleSheet.create({
   },
   MainContainer: {
     display: 'flex',
-    height: '86%',
+    height: 2200,
     backgroundColor: 'white',
     shadowColor: 'black',
     shadowOffset: { width: 100, height: 100 },
@@ -273,16 +280,15 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     elevation: 10,
-    margin: 0,
+    margin:0,
     marginBottom: 0,
-    marginTop: 20
+    marginTop:20
 
 
   },
   mainitems: {
     flex: 1,
-    height:1000,
-    margin: 2,
+    margin:1,
     backgroundColor: 'white',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
@@ -290,60 +296,62 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     elevation: 3,
-    padding: 10
+    padding:10
   },
   userNameContainer: {
 
   },
   chooseText: {
-    fontSize: 20,
-    fontWeight: '500'
+fontSize:20,
+  fontWeight:'500'
   },
   HiText: {
-    fontSize: 25,
-    fontWeight: '400'
+  fontSize:25,
+  fontWeight:'400'
   },
   userName: {
-    fontSize: 25,
-    fontWeight: '600'
+fontSize:25,
+  fontWeight:'600'
   },
   categoriesContainer: {
 
     flex: 1,
     display: 'flex',
-
+   
 
   },
   selectCategoriesContainer: {
-    height: 400,
+    height: '110%',
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop:-30
   },
   TopContainer: {
-    height: 200,
+   height:190,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 20,
-    marginBottom: 0,
-    marginTop: 0,
+    margin:10,
+    marginBottom:20,
+    marginTop:20,
+    marginLeft:20
   },
 
   sellContainer: {
-    marginBottom: -190,
+    marginBottom:-190,
     height: 150,
-    width: 150,
+    width: 140,
     backgroundColor: '#28AC60',
-
+  
     borderRadius: 30,
     padding: 5,
-    opacity: 0.8,
-
+    opacity:0.8,
+    
   },
   sell: {
     height: '100%',
@@ -353,7 +361,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-
+marginBottom:2
 
   },
   presell: {
@@ -423,8 +431,17 @@ const styles = StyleSheet.create({
     height: 70,
     width: 80,
     borderRadius: 100,
-  }
-
+  },
+  down:{
+    
+  },
+  btnImg3: {
+    position: 'absolute',
+    height: 80,
+    width: 50,
+    borderRadius: 100,
+  
+  },
 
 
 

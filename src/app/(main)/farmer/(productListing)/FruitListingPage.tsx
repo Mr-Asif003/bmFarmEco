@@ -146,7 +146,7 @@ const FruitListingPage = ({ }: { title: string, id: 'string' }) => {
                 </View>
 
                 <View style={styles.title}>
-                    <Text style={styles.titleTxt}>{itemtitle}</Text>
+                    <Text style={{fontSize:30,fontWeight:'700'}}>{itemtitle}</Text>
                     <Text style={{ fontSize: 14, fontWeight: '400', marginTop: 0, marginLeft: -20 }}> {itemtitle} market rate is  = {itemRate}</Text>
                     </View>
             </View>
@@ -165,7 +165,7 @@ const FruitListingPage = ({ }: { title: string, id: 'string' }) => {
 
 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>   
                 <View style={{ marginTop: 5 }}>
-                    <Text style={{ fontSize: 17, fontWeight: '500' }}>Quantity in KG</Text>
+                    <Text style={{ fontSize: 15, fontWeight: '500' }}>Quantity in KG</Text>
                     <TextInput
                         value={Quantity}
                         onChangeText={setQuantity}
@@ -185,7 +185,7 @@ const FruitListingPage = ({ }: { title: string, id: 'string' }) => {
 
                 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View style={{ marginTop: 5 }}>
-                        <Text style={{ fontSize: 17, fontWeight: '500' }}>Price Per KG</Text>
+                        <Text style={{ fontSize: 15, fontWeight: '500' }}>Price Per KG</Text>
                         <TextInput
                             value={price}
                             onChangeText={setPrice}
@@ -193,7 +193,7 @@ const FruitListingPage = ({ }: { title: string, id: 'string' }) => {
                     </View>
 
                     <View style={{ marginTop: 5, marginLeft: 20 }}>
-                        <Text style={{ fontSize: 17, fontWeight: '500', marginLeft: 10 }}>Date of Delivery</Text>
+                        <Text style={{ fontSize: 15, fontWeight: '500', marginLeft: 10 }}>Date of Delivery</Text>
                         <TextInput
                             value={dod}
                             onChangeText={setDod}
@@ -204,7 +204,7 @@ const FruitListingPage = ({ }: { title: string, id: 'string' }) => {
 
 
                 <View style={{ marginTop: 5 }}>
-                    <Text style={{ fontSize: 17, fontWeight: '500' }}>State</Text>
+                    <Text style={{ fontSize: 15, fontWeight: '500' }}>State</Text>
                     <TextInput
                     autoCapitalize="characters"
                         value={state}
@@ -216,7 +216,7 @@ const FruitListingPage = ({ }: { title: string, id: 'string' }) => {
 
                 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View style={{ marginTop: 7 }}>
-                        <Text style={{ fontSize: 17, fontWeight: '500' }}>Phone number</Text>
+                        <Text style={{ fontSize: 15, fontWeight: '500' }}>Phone number</Text>
                         <TextInput
                             value={phone}
                             onChangeText={setPhone}
@@ -225,7 +225,7 @@ const FruitListingPage = ({ }: { title: string, id: 'string' }) => {
 
 
                     <View style={{ marginTop: 7, marginLeft: 20 }}>
-                        <Text style={{ fontSize: 17, fontWeight: '500' }}>Pin Code</Text>
+                        <Text style={{ fontSize: 15, fontWeight: '500' }}>Pin Code</Text>
                         <TextInput
                             value={pinCode}
                             onChangeText={setPinCode}
@@ -233,7 +233,7 @@ const FruitListingPage = ({ }: { title: string, id: 'string' }) => {
                     </View>
                 </View>
                 <View style={{ marginTop: 7, }}>
-                    <Text style={{ fontSize: 17, fontWeight: '500' }}>Address</Text>
+                    <Text style={{ fontSize: 15, fontWeight: '500' }}>Address</Text>
                     <TextInput
                         value={address}
                         onChangeText={setAddress}
@@ -264,13 +264,14 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     topContainer: {
-        height: 200,
+        height:'20%',
         backgroundColor: '#d80032'
     },
     bottomContainer: {
-        marginTop: 60,
+        
+        marginTop: 90,
 
-        height: 700,
+        height: '80%',
         display: 'flex',
         alignItems: 'flex-start',
         padding: 10,
@@ -284,7 +285,7 @@ const styles = StyleSheet.create({
     },
     title: {
         marginLeft: 230,
-        marginTop: -40,
+        marginTop: -50,
         
     },
     titleTxt: {
@@ -308,13 +309,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         elevation: 10,
         marginTop: 10,
-        marginLeft: 240,
+        marginLeft: 220,
     },
     stackIcon: {
         height: 50,
         
         marginBottom: 5,
-        marginTop: -33
+        marginTop: -25,
+        marginLeft:10
     },
     headerText: {
         fontSize: 16,

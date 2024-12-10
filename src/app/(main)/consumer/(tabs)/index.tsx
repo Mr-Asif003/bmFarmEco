@@ -1,4 +1,4 @@
-import { FlatList, View, Text, StyleSheet, ScrollView, Image ,TouchableOpacity} from 'react-native'
+import { FlatList, View, Text, StyleSheet, ScrollView, Image ,TouchableOpacity,SafeAreaView} from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Container } from 'lucide-react-native'
 import Header from '../../../../components/molecules/header';
@@ -10,7 +10,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { trendingProducts ,seasonalProducts ,closureImgs,TopRatedProducts } from '../../farmer/fdb/trendingProduct'
 import Octicons from 'react-native-vector-icons/Octicons';
 import { useRouter } from 'expo-router';
-
+import SelectVeg from '../SelectVeg';
 
 const index = () => {
   const router=useRouter();
@@ -18,6 +18,8 @@ const index = () => {
   //extracting name
 
   const [userName, setUserName] = useState("");
+  const [state, setState] = useState("");
+  const [address, setaddress] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -28,7 +30,9 @@ const index = () => {
           const userDoc = await getDoc(doc(db, "users", user.uid));//to get collection from user i write this code
           if (userDoc.exists()) {
             const userData = userDoc.data();//to get data from user i write this code
-            setUserName(userData.name || "User"); // Fallback to "User" if name is not set
+            setUserName(userData.name || "User");
+            setState(userData.state || 'User Address');
+            setaddress(userData.Address);                                 // Fallback to "User" if name is not set
           } else {
             console.warn("User data not found in Firestore.");
           }
@@ -62,12 +66,12 @@ const index = () => {
     <View style={styles.trcard}>
       <View style={styles.trsideView1}>
       <Image source={item.image} style={styles.trimage} />
-      <Text style={{fontSize:25,fontWeight:'500'}}>{item.title}</Text>
-      <Text style={{fontSize:18,fontWeight:'400'}}>Price:-{item.price}</Text>
+      <Text style={{fontSize:15,fontWeight:'500'}}>{item.title}</Text>
+      <Text style={{fontSize:14,fontWeight:'400'}}>Price:-{item.price}</Text>
       </View>
       <View style={styles.trsideView2}>
-      <Text style={{fontSize:22,fontWeight:'500'}}>*{item.Rating}</Text>
-      <Text style={{fontSize:17,fontWeight:'500'}}>{item.cropType}</Text>
+      <Text style={{fontSize:14,fontWeight:'500'}}>*{item.Rating}</Text>
+      <Text style={{fontSize:14,fontWeight:'500'}}>{item.cropType}</Text>
       <TouchableOpacity style={styles.buttonView} onPress={()=>router.push('./SelectVeg')}>
                       <Octicons name="plus-circle" color="#000" size={30} />
                       </TouchableOpacity>
@@ -84,7 +88,7 @@ const index = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Header userName={userName} />
+        <Header userName={userName} address={address} />
       </View>
 
       <View style={styles.MainContainer}>
@@ -99,7 +103,7 @@ const index = () => {
           />
 
 
-          <Text style={styles.ourfeature}>Our Feature</Text>
+          <Text style={styles.featureText}>Our Feature</Text>
           <View style={styles.tabOptionContainer}>
             <TabBarOption />
           </View>
@@ -131,6 +135,8 @@ const index = () => {
           {/* seasonalDemand */}
 
           <Text style={styles.featureText}>Seasonal Demands</Text>
+          <SafeAreaView >
+
           <FlatList
             data={seasonalProducts}
             renderItem={renderItem}
@@ -139,6 +145,7 @@ const index = () => {
             showsHorizontalScrollIndicator={false} // Optional: Hides the horizontal scrollbar
             contentContainerStyle={styles.listContainer}
           />
+          </SafeAreaView>
           
           
 
@@ -191,22 +198,12 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: '700',
    fontFamily:'sanSerif',
-    marginTop: 40
-  },
-  ourfeature:{
-  marginTop:5,
-   marginLeft: 15,
-    fontSize: 19,
-    color: 'black',
-    fontWeight: '700',
-   fontFamily:'sanSerif',
+    marginTop: 20
   },
 
   trendingScroll: {
     display: 'flex',
     flexDirection: 'row',
-
-
   },
   trendingscrollview: {
     height: 100,
@@ -214,8 +211,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     margin: 10
   },
-
-
   listContainer: {
     paddingHorizontal: 16,
   },
@@ -269,23 +264,24 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
    // Adds space between cards
-    width: 250,
-    height:180, // Set a fixed width for the horizontal cards
+    width: 200,
+    height:140, // Set a fixed width for the horizontal cards
     shadowColor: '#000',
     shadowOpacity: 0.0,
     shadowOffset: { width: 0, height: 0},
     
-    elevation: 10,
-    marginTop:30,
-    marginLeft:50,
+    elevation: 2,
+    marginTop:25,
+    marginBottom:10,
+    marginLeft:20,
     display:'flex',
     flexDirection:'row',
-    
+    marginRight:20
   },
   trimage:{
     
-    width: '120%',
-    height: 120, // Adjust the height for horizontal layout
+    width: '110%',
+    height: 90, // Adjust the height for horizontal layout
     borderRadius: 20,
    
     marginLeft:-34,
@@ -299,13 +295,14 @@ const styles = StyleSheet.create({
   width:80,
   display:'flex',
   justifyContent:'space-between',
-  alignItems:'flex-end'
+  
   },
   trsideView1:{
     position:'relative',
-    width:150,
+    width:110,
     display:'flex'
     },
+
     buttonView: {
       display:'flex',
       height: 35,

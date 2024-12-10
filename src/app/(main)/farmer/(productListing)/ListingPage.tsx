@@ -115,10 +115,13 @@ const ListingPage = ({ }: { title: string, id: 'string' }) => {
         <SafeAreaView>
         <View style={styles.container}>
             <View style={styles.topContainer}>
-                <View style={{ display: 'flex', flexDirection: 'row' }}>
+                <View style={{ display: 'flex', flexDirection: 'row',width:'100%' }}>
+                   <View style={{width:'83%',height:'43%'}}>
 
                     <Image source={require('../../../../assets/images/vegtables.png')} style={styles.image}></Image>
-                    <View style={{ marginTop: 10 ,width:'100%'}}>
+                   </View>
+                   
+                    <View style={{ marginTop: 10 ,width:'57%',marginLeft:-90,display:'flex'}}>
 
                         <Text style={{ fontSize: 12, fontWeight: '400', marginTop: 1,marginLeft:-2 }}> Vegetable id = {itemId}</Text>
 
@@ -147,6 +150,7 @@ const ListingPage = ({ }: { title: string, id: 'string' }) => {
                 </View>
 
             </View>
+
                 <View style={styles.title}>
                     <Text style={styles.titleTxt}>{itemtitle}</Text>
                     <Text style={{ fontSize: 10, fontWeight: '400', marginTop: 0, marginLeft:'-25%' }}> {itemtitle} market rate is  = {itemRate}</Text>
@@ -184,23 +188,23 @@ const ListingPage = ({ }: { title: string, id: 'string' }) => {
                 </View>
 
 
-                <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <View style={{ marginTop: 5 }}>
+                <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' ,width:'100%'}}>
+                    <View style={{ marginTop: 5 ,width:'50%'}}>
                         <Text style={{ fontSize: 14, fontWeight: '500' }}>Price Per KG</Text>
                         <TextInput
                             value={price}
                             onChangeText={setPrice}
-                            placeholder='Demanding Price Per Kg' style={{ backgroundColor: '#BDE7CF', borderRadius: 20, height: 45, width:'80%', marginTop: 1, fontSize: 15, paddingLeft: 10 }} />
+                            placeholder='Demanding Price Per Kg' style={{ backgroundColor: '#BDE7CF', borderRadius: 20, height: 45, width:'100%', marginTop: 1, fontSize: 15, paddingLeft: 10,marginLeft:10 }} />
                     </View>
 
-                    <View style={{ marginTop: 5, marginLeft: 0 }}>
-                        <Text style={{ fontSize: 10, fontWeight: '500', marginLeft: 10 }}>Date of Delivery</Text>
+                    <View style={{ marginTop: 5, marginLeft: 20 ,width:'50%'}}>
+                        <Text style={{ fontSize: 14, fontWeight: '500', marginLeft: 10 }}>Date of Delivery</Text>
                         <TextInput
                         
                             value={dod}
                             onChangeText={setDod}
                             
-                            placeholder='Date' style={{ backgroundColor: '#BDE7CF', borderRadius: 20, height: 45, width:'100%', marginTop: 1, fontSize: 15, paddingLeft: 10 }} />
+                            placeholder='DD/MM/YYYY' style={{ backgroundColor: '#BDE7CF', borderRadius: 20, height: 45, width:'90%', marginTop: 1, fontSize: 15, paddingLeft: 10 }} />
                     </View>
                 </View>
 
@@ -277,7 +281,7 @@ const styles = StyleSheet.create({
     },
     bottomContainer: {
         
-        marginTop:'3%',
+        marginTop:'8%',
         width:'100%',
         height: 700,
         display: 'flex',
@@ -285,8 +289,8 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     image: {
-        height:'350%',
-        width: '76%',
+        height:'360%',
+        width: '83%',
         borderRadius: 200,
         marginTop:'-15%',
         marginLeft: '-20%'

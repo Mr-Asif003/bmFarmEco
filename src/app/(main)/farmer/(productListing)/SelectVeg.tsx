@@ -20,6 +20,7 @@ import { SelectVegDB } from '@/src/Database/adminDB/selectVegDB';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Categories from '../(tabs)/Categories';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const SelectVeg = () => {
   const navigation = useNavigation()
@@ -72,6 +73,7 @@ const  passItemData=(itemId,itemRate,itemtitle)=>{
   );
 
   return (
+    
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity
@@ -92,10 +94,13 @@ const  passItemData=(itemId,itemRate,itemtitle)=>{
           <TouchableOpacity style={styles.fruitbtn} onPress={() => router.replace('./SelectFruits')}><Text style={styles.fruittxt} >Fruits</Text></TouchableOpacity>
         </View>
       </View>
+
       <ScrollView>
         <View style={styles.tabBar}><VegTabBarOption /></View>
         <View style={styles.mainContainer}>
           
+      <SafeAreaView>
+
         <FlatList
             data={SelectVegDB}
             renderItem={renderItem}
@@ -105,6 +110,7 @@ const  passItemData=(itemId,itemRate,itemtitle)=>{
             showsHorizontalScrollIndicator={false} // Optional: Hides the horizontal scrollbar
             contentContainerStyle={styles.listContainer}
           />
+      </SafeAreaView>
          
         </View>
       </ScrollView>

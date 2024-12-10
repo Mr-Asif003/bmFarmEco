@@ -16,22 +16,22 @@ return(
         name="index"
         options={{
           headerShown:false,
-          title: 'Home',
+          title: '',
           tabBarIcon: ({ color }) => <Foundation name="home" color={color} size={34} />,
         }}/>
     <Tabs.Screen name='Categories'   options={{
           headerShown:false,
-          title: 'Order Place',
+          title: '',
           tabBarIcon: ({ color }) =><FontAwesome5 name="store-alt" size={24} color={color}/>,
         }}/>
     <Tabs.Screen name='Cart'  options={{
           headerShown:false,
-          title: 'MyProduct',
+          title: '',
           tabBarIcon: ({ color }) => <FontAwesome name="cart-arrow-down" color={color} size={24} />,
         }}/>
     <Tabs.Screen name='Account'  options={{
           headerShown:false,
-          title: 'Account',
+          title: '',
           tabBarIcon: ({ color }) => <MaterialCommunityIcons name="account-box" size={24} color={color}/>,
         }} />
 
